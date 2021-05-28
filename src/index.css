@@ -1,3 +1,8 @@
+
+*{
+  pointer-events: none;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +15,184 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+.Lines{
+  overflow: visible;
+  position: relative;
+}
+
+
+
+.Frame{
+  position:relative;
+  display: block;
+  z-index: 1;
+  pointer-events: none;
+  stroke:rgb(0,0,0);
+  cursor: default;
+}
+
+@keyframes dash {
+  to {
+  stroke-dashoffset: 0;
+  }
+  } 
+
+#Line1, #Line2, #Line3, #Line4{
+  position: absolute;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: dash linear forwards;
+  animation-timing-function: ease-in-out;
+  animation-duration: 0.375s;
+  pointer-events: none;
+
+}
+
+
+#Line2{
+  animation-delay: 0.15s;
+}
+
+#Line3{
+  animation-delay: 0.3s;
+}
+
+#Line4{
+  animation-delay: 0.45s;
+}
+
+
+
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+    }
+  
+    70% {
+      box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+    }
+  
+    100% {
+      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+  }
+
+
+#startButton{
+  position: relative;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  pointer-events: auto;
+  animation: pulse 2s infinite;
+
+
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+   -khtml-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none; 
+          user-select: none; 
+}
+
+
+#backToStartButton{
+  position: relative;
+  color: black;
+  text-align: center;
+  cursor: pointer;
+  pointer-events: auto;
+  stroke-width: 2px;;
+  animation: pulse 2s infinite;
+  background-color : white;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+   -khtml-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none; 
+          user-select: none; 
+}
+
+#backToStartButton:hover{
+color:white;
+background-color : black;
+height: 5px;
+}
+
+  @keyframes rotation{
+    to{
+    transform: rotate(135deg)
+    }
+    }
+
+  .rotation{
+  transform: rotate(45deg);
+  position: fixed;
+  pointer-events: none;
+  animation-duration: 1s;
+  animation-name: rotation;
+  animation-delay: 0.6s;
+  animation-iteration-count: 0;
+  animation-timing-function: linear;
+  }
+
+.Menu{
+  display: block;
+  pointer-events: none;
+  stroke:rgb(0,0,0);
+  cursor: default;
+}
+
+
+#menuOption1,#menuOption2,#menuOption3,#menuOption4{
+    color: black;
+    text-align: center;
+    cursor: pointer;
+    pointer-events: auto;
+    border: none;
+    font-weight: bold;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none; 
+            user-select: none; 
+    }
+
+#menuOption1:hover,#menuOption2:hover,#menuOption3:hover,#menuOption4:hover{
+      border: calc(1vh/2);
+      border-style: solid;
+    }
+
+#projectsBackground{
+  border: none;
+}
+.images{
+  
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+   -khtml-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none; 
+          user-select: none; 
+}
+
+.Projects{
+  border-radius: 100%;
+  position: absolute;
+}
+
+.navButton{
+  border-radius: 100%;
+  pointer-events: auto;
+  border: solid;
+}
+.navButton:hover{
+  border-style:groove;
 }

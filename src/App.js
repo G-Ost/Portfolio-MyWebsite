@@ -1,23 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
-
+import React from "react"
+import Frame from "./Containers/Frame"
+import Menu from "./Containers/Menu"
+import { stylesContext } from "./Contexts/StylesContext";
 function App() {
+  const { isMenuVisible, setIsMenuVisible } = React.useContext(stylesContext);
+  const backToStartFunctionRef = React.useRef(null);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Frame backToStartFunctionRef={backToStartFunctionRef} isMenuVisible={isMenuVisible} setIsMenuVisible={setIsMenuVisible} />
+      {isMenuVisible && <Menu backToStartFunctionRef={backToStartFunctionRef} isMenuVisible={isMenuVisible} setIsMenuVisible={setIsMenuVisible} />}
     </div>
   );
 }
