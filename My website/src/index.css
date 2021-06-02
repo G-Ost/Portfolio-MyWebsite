@@ -183,11 +183,6 @@ height: 5px;
           user-select: none; 
 }
 
-.Projects{
-  border-radius: 100%;
-  position: absolute;
-}
-
 .navButton{
   border-radius: 100%;
   pointer-events: auto;

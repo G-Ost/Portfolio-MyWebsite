@@ -4,10 +4,10 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Projects from "./Components/Projects"
-import CV from "./Components/CV"
-import About from "./Components/About"
-import Contact from "./Components/Contact"
+import Projects from "./Components/MenuOptions/Projects"
+import CV from "./Components/MenuOptions//CV"
+import About from "./Components/MenuOptions/About"
+import Contact from "./Components/MenuOptions/Contact"
 import { StylesContext } from "./Contexts/StylesContext"
 
 
