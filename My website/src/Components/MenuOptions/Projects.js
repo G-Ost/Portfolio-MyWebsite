@@ -44,7 +44,7 @@ function Projects(props) {
                     <h1 style={{ fontSize: sizeUnit / 15 }}>(just use navigation below)</h1>
                 </div>}
                 {navSelected === "2" &&
-                    <Project projectTitle={"This very website"} imageAlt={"website_image"} imageSrc={websiteImage} githubLink={"https://github.com/G-Ost/Portfolio-ToDoApp"}
+                    <Project projectTitle={"This very website"} imageAlt={"website_image"} imageSrc={websiteImage} githubLink={"https://github.com/G-Ost/Portfolio-MyWebsite"}
                         featureList={featureList1} />}
                 {navSelected === "3" &&
                     <Project projectTitle={"Reflex Trainer"} imageAlt={"website_image"} imageSrc={reflexappImage} githubLink={"https://github.com/G-Ost/Portfolio-reflexApp"}
