@@ -5,12 +5,8 @@ import { stylesContext } from "../Contexts/StylesContext"
 
 function Frame(props) {
     const { sizeUnit } = React.useContext(stylesContext);
-    let frameSide = sizeUnit;
-    let horizontalPosition = window.innerHeight / 2 - frameSide / 2;
-    let verticalPosition = window.innerWidth / 2 - frameSide / 2;
-    let strokeWidth = frameSide / 20;
-    let linesCorrection = strokeWidth * 0.5
-    let frameStyle = { width: frameSide, height: frameSide, top: horizontalPosition, left: verticalPosition, strokeWidth: strokeWidth };
+    let linesCorrection = sizeUnit / 40
+    let frameStyle = { width: sizeUnit, position: "absolute", height: sizeUnit, top: "50%", left: "50%", marginLeft: -sizeUnit / 2, marginTop: -sizeUnit / 2, strokeWidth: sizeUnit / 20 };
 
     const rotationRef = React.useRef(null);
 
@@ -38,10 +34,10 @@ function Frame(props) {
     return (
         <div className="Frame" style={frameStyle}>
             <div ref={rotationRef} className="rotation" style={frameStyle}>
-                <Line lineId={"Line1"} x1={-linesCorrection} x2={frameSide + linesCorrection} y1={0} y2={0} />
-                <Line lineId={"Line2"} x1={frameSide} x2={frameSide} y1={0} y2={frameSide + linesCorrection} />
-                <Line lineId={"Line3"} x1={frameSide} x2={-linesCorrection} y1={frameSide} y2={frameSide} />
-                <Line lineId={"Line4"} x1={0} x2={0} y1={frameSide} y2={0} />
+                <Line lineId={"Line1"} x1={-linesCorrection} x2={sizeUnit + linesCorrection} y1={0} y2={0} />
+                <Line lineId={"Line2"} x1={sizeUnit} x2={sizeUnit} y1={0} y2={sizeUnit + linesCorrection} />
+                <Line lineId={"Line3"} x1={sizeUnit} x2={-linesCorrection} y1={sizeUnit} y2={sizeUnit} />
+                <Line lineId={"Line4"} x1={0} x2={0} y1={sizeUnit} y2={0} />
             </div>
             {!props.isMenuVisible && <Button buttonId={"startButton"} sizeUnit={sizeUnit} onCLickFunction={onStartButtonClick} color={"Black"}>Click me!</Button>}
             {props.isMenuVisible && <Button buttonId={"backToStartButton"} sizeUnit={sizeUnit} onCLickFunction={backToStart} >Go back</Button>}

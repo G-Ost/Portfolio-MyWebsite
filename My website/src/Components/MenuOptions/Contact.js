@@ -1,54 +1,34 @@
 import React from "react"
 import { stylesContext } from "../../Contexts/StylesContext"
-import backArrow from "../../Images/backArrow.png"
-import backArrowHover from "../../Images/backArrowHover.png"
 import githubLogo from "../../Images/githubLogo.png"
 import emailIcon from "../../Images/emailIcon.png"
 import phoneIcon from "../../Images/phoneIcon.png"
-import { useHistory } from "react-router-dom";
+import MenuOption from "../../Containers/MenuOption"
+
 
 function Contact(props) {
-    const history = useHistory();
-    const { sizeUnit, menuOptionStart, goBackFromOption, menuOptionStyle } = React.useContext(stylesContext);
-    const contactRef = React.useRef(null);
-    const wrapperRef = React.useRef(null);
-    const newSizeUnit = window.innerHeight > window.innerWidth ? window.innerWidth * 0.9 : window.innerHeight * 0.9;
+    const { sizeUnit } = React.useContext(stylesContext);
 
-    function goBack() {
-        goBackFromOption(contactRef, wrapperRef)
-        setTimeout(() => { history.push("/Menu") }, 300);
-    }
-    React.useEffect(
-        () => { menuOptionStart(contactRef, wrapperRef, newSizeUnit) }
-    )
 
-    const imgStyle = { position: "absolute", zIndex: "10", height: sizeUnit / 3, left: newSizeUnit - sizeUnit / 2.5, pointerEvents: "auto" }
-    const headerStyle = { position: "relative", fontSize: sizeUnit / 8, whiteSpace: "nowrap", width: "auto", pointerEvents: "auto", top: sizeUnit / 5 }
+    const headerStyle = { position: "relative", fontSize: sizeUnit / 8, whiteSpace: "nowrap", width: "100%", textAlign: "center", pointerEvents: "auto", top: sizeUnit / 5 }
     return (
-
-        <div ref={contactRef} style={{ ...menuOptionStyle, backgroundColor: "rgb(300,300,50)" }}>
-            <span ref={wrapperRef} style={{ visibility: "hidden", textAlign: "center" }}>
-                <img className={"images"} alt="go_back" style={imgStyle} onMouseOver={e => (e.currentTarget.src = backArrowHover)} onMouseOut={e => (e.currentTarget.src = backArrow)} src={backArrow} onClick={() => { goBack() }}></img>
-                <h1 style={headerStyle}>Grzegorz Ostapczuk</h1>
-
-                <ul style={{ listStyleType: "none", position: "absolute", textAlign: "left", top: sizeUnit / 1.8, left: sizeUnit / 5 }}>
-                    <li style={{ position: "relative", whiteSpace: "nowrap", top: sizeUnit * 0.05 }}>
-                        <img style={{ height: sizeUnit / 10, verticalAlign: "middle" }} className={"images"} alt="phoneIcon" src={phoneIcon} ></img> &nbsp;
+        <MenuOption color={"rgb(300,300,50)"}>
+            <h1 style={headerStyle}>Grzegorz Ostapczuk</h1>
+            <ul style={{ listStyleType: "none", position: "absolute", textAlign: "left", top: sizeUnit / 1.8, left: sizeUnit / 5 }}>
+                <li style={{ position: "relative", whiteSpace: "nowrap", top: sizeUnit * 0.05 }}>
+                    <img style={{ height: sizeUnit / 10, verticalAlign: "middle" }} className={"images"} alt="phoneIcon" src={phoneIcon} ></img> &nbsp;
                          <span style={{ pointerEvents: "auto", verticalAlign: "middle", fontWeight: "bold", fontSize: sizeUnit / 12 }}>691 835 187</span>
-                    </li>
-                    <li style={{ position: "relative", whiteSpace: "nowrap", top: sizeUnit * 0.25 }}>
-                        <img style={{ height: sizeUnit / 10, verticalAlign: "middle" }} className={"images"} alt="emailIcon" src={emailIcon} ></img> &nbsp;
+                </li>
+                <li style={{ position: "relative", whiteSpace: "nowrap", top: sizeUnit * 0.25 }}>
+                    <img style={{ height: sizeUnit / 10, verticalAlign: "middle" }} className={"images"} alt="emailIcon" src={emailIcon} ></img> &nbsp;
                         <span style={{ pointerEvents: "auto", verticalAlign: "middle", fontWeight: "bold", fontSize: sizeUnit / 12 }}>g.ostapczuk@gmail.com</span>
-                    </li>
-                    <li style={{ position: "relative", whiteSpace: "nowrap", top: sizeUnit * 0.45 }}>
-                        <img style={{ height: sizeUnit / 10, verticalAlign: "middle" }} className={"images"} alt="githubLogo" src={githubLogo} ></img> &nbsp;
+                </li>
+                <li style={{ position: "relative", whiteSpace: "nowrap", top: sizeUnit * 0.45 }}>
+                    <img style={{ height: sizeUnit / 10, verticalAlign: "middle" }} className={"images"} alt="githubLogo" src={githubLogo} ></img> &nbsp;
                         <a href="https://github.com/G-Ost" target="_blank" rel="noreferrer" style={{ pointerEvents: "auto", verticalAlign: "middle", fontWeight: "bold", fontSize: sizeUnit / 12 }}>https://github.com/G-Ost</a>
-                    </li>
-                </ul>
-
-            </span>
-        </div>
-
+                </li>
+            </ul>
+        </MenuOption>
     )
 }
 
