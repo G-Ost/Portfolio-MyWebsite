@@ -3,8 +3,15 @@ const stylesContext = React.createContext();
 
 function StylesContext(props) {
     const [isMenuVisible, setIsMenuVisible] = React.useState(false);
-    const sizeUnit = window.innerHeight > window.innerWidth ? window.innerWidth / 2.5 : window.innerHeight / 2.5;
-    // const sizeUnit = 300;
+    const [sizeUnit, setSizeUnit] = React.useState(window.matchMedia(" (max-height: 600px) ").matches ? 140 : 350)
+
+    React.useEffect(() => {
+        window.addEventListener("orientationchange", () => { setSizeUnit(sizeUnit === 180 ? 350 : 180) });
+        return window.removeEventListener("orientationchange", () => { setSizeUnit(sizeUnit === 180 ? 350 : 180) });
+    }
+    )
+
+
     const menuStyle = { left: "50%", top: "50%", textAlign: "center", position: "absolute" };
     let menuOptionStyle = { marginLeft: -sizeUnit / 5, marginTop: -sizeUnit / 5, top: "50%", left: "50%", position: "absolute", borderRadius: "100%", height: sizeUnit / 2.5, width: sizeUnit / 2.5, pointerEvents: "auto", backgroundColor: "rgb(300,100,100)" }
 
@@ -52,3 +59,16 @@ function StylesContext(props) {
 }
 
 export { StylesContext, stylesContext }
+
+// @media (orientation: portrait){
+//     .Buttons{
+//       left: -2%;  
+//     }
+// }
+
+// @media only screen and (min-width: 768px){
+// .canvas{
+// position: fixed;
+// height: 100%;
+// width: 100%;
+// } 
