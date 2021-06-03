@@ -9,11 +9,11 @@ function Menu(props) {
     const { sizeUnit, changeElementPosition, menuStyle } = React.useContext(stylesContext);
 
 
-    const blueButtonRef = React.useRef(null);
-    const redButtonRef = React.useRef(null);
-    const yellowButtonRef = React.useRef(null);
-    const greenButtonRef = React.useRef(null);
-    const buttonRefs = [greenButtonRef, blueButtonRef, yellowButtonRef, redButtonRef];
+    const menuOption3Ref = React.useRef(null);
+    const menuOption1Ref = React.useRef(null);
+    const menuOption2Ref = React.useRef(null);
+    const menuOption4Ref = React.useRef(null);
+    const buttonRefs = [menuOption4Ref, menuOption3Ref, menuOption2Ref, menuOption1Ref];
 
     React.useEffect(
         spreadMenuButtons
@@ -61,10 +61,10 @@ function Menu(props) {
 
     return (
         <div className="Menu" style={menuStyle}>
-            <Button givenRef={blueButtonRef} buttonId={"menuOption1"} onCLickFunction={() => { activateMenuOption(blueButtonRef, "CV") }} sizeUnit={sizeUnit} color={"rgb(100,100,300)"}>CV</Button>
-            <Button givenRef={redButtonRef} buttonId={"menuOption2"} onCLickFunction={() => { activateMenuOption(redButtonRef, "Projects") }} sizeUnit={sizeUnit} color={"rgb(300,100,100)"}>Projects</Button>
-            <Button givenRef={greenButtonRef} buttonId={"menuOption3"} onCLickFunction={() => { activateMenuOption(greenButtonRef, "About") }} sizeUnit={sizeUnit} color={"rgb(100,300,100)"}>About me</Button>
-            <Button givenRef={yellowButtonRef} buttonId={"menuOption4"} onCLickFunction={() => { activateMenuOption(yellowButtonRef, "Contact") }} sizeUnit={sizeUnit} color={"rgb(300,300,50)"}>Contact</Button>
+            <Button givenRef={menuOption1Ref} buttonId={"menuOption1"} onCLickFunction={() => { activateMenuOption(menuOption1Ref, "Projects") }} sizeUnit={sizeUnit} color={"rgb(300,100,100)"}>Projects</Button>
+            <Button givenRef={menuOption2Ref} buttonId={"menuOption2"} onCLickFunction={() => { activateMenuOption(menuOption2Ref, "Contact") }} sizeUnit={sizeUnit} color={"rgb(300,300,50)"}>Contact</Button>
+            <Button givenRef={menuOption3Ref} buttonId={"menuOption3"} onCLickFunction={() => { activateMenuOption(menuOption3Ref, "CV") }} sizeUnit={sizeUnit} color={"rgb(100,100,300)"}>CV</Button>
+            <Button givenRef={menuOption4Ref} buttonId={"menuOption4"} onCLickFunction={() => { activateMenuOption(menuOption4Ref, "About") }} sizeUnit={sizeUnit} color={"rgb(100,300,100)"}>About me</Button>
         </div>
 
     )

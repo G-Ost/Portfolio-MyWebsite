@@ -191,3 +191,7 @@ height: 5px;
 .navButton:hover{
   border-style:groove;
 }
+
+#menuOption4{
+  z-index: 100;
+}

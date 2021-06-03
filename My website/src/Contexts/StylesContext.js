@@ -59,16 +59,3 @@ function StylesContext(props) {
 }
 
 export { StylesContext, stylesContext }
-
-// @media (orientation: portrait){
-//     .Buttons{
-//       left: -2%;  
-//     }
-// }
-
-// @media only screen and (min-width: 768px){
-// .canvas{
-// position: fixed;
-// height: 100%;
-// width: 100%;
-// } 
