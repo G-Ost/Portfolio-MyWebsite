@@ -179,7 +179,7 @@ code {
   user-select: none;
 }
 
-.navButton {
+.navButtons {
   border-radius: 100%;
   pointer-events: auto;
   border: solid;
@@ -200,4 +200,8 @@ code {
 
 .navArrows:hover {
   color: white;
+}
+
+.navButtons:hover {
+  border-style: groove;
 }

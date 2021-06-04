@@ -154,45 +154,63 @@ function Projects(props) {
         }}
       >
         <button
-          className="navButton"
+          className="navButtons"
           style={{
             ...navButtonStyle,
             backgroundColor: navSelected === "1" ? "white" : "#33DED6",
           }}
+          onClick={() => {
+            setNavSelected("1");
+          }}
         ></button>
         <button
-          className="navButton"
+          className="navButtons"
           style={{
             ...navButtonStyle,
             backgroundColor: navSelected === "2" ? "white" : "#33DED6",
           }}
+          onClick={() => {
+            setNavSelected("2");
+          }}
         ></button>
         <button
-          className="navButton"
+          className="navButtons"
           style={{
             ...navButtonStyle,
             backgroundColor: navSelected === "3" ? "white" : "#33DED6",
           }}
+          onClick={() => {
+            setNavSelected("3");
+          }}
         ></button>
         <button
-          className="navButton"
+          className="navButtons"
           style={{
             ...navButtonStyle,
             backgroundColor: navSelected === "4" ? "white" : "#33DED6",
           }}
+          onClick={() => {
+            setNavSelected("4");
+          }}
         ></button>
         <button
-          className="navButton"
+          className="navButtons"
           style={{
             ...navButtonStyle,
             backgroundColor: navSelected === "5" ? "white" : "#33DED6",
           }}
+          onClick={() => {
+            setNavSelected("5");
+          }}
         ></button>
         <button
-          className="navButton"
+          className="navButtons"
           style={{
             ...navButtonStyle,
             backgroundColor: navSelected === "6" ? "white" : "#33DED6",
+          }}
+          onClick={() => {
+            setNavSelected("6");
           }}
         ></button>
       </div>
