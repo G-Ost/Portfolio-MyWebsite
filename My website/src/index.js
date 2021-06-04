@@ -1,19 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Projects from "./Components/MenuOptions/Projects"
-import CV from "./Components/MenuOptions//CV"
-import About from "./Components/MenuOptions/About"
-import Contact from "./Components/MenuOptions/Contact"
-import { StylesContext } from "./Contexts/StylesContext"
-
+import Projects from "./Components/MenuOptions/Projects";
+import CV from "./Components/MenuOptions//CV";
+import About from "./Components/MenuOptions/About";
+import Contact from "./Components/MenuOptions/Contact";
+import { StylesContext } from "./Contexts/StylesContext";
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter >
+    <BrowserRouter>
       <StylesContext>
         <Switch>
           <Route path="/Contact">
@@ -35,7 +34,7 @@ ReactDOM.render(
       </StylesContext>
     </BrowserRouter>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function

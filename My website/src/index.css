@@ -1,46 +1,46 @@
-
-*{
+* {
   pointer-events: none;
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-
-.Lines{
+.Lines {
   overflow: visible;
   position: relative;
+  fill: "purple";
 }
 
-
-
-.Frame{
-  position:relative;
+.Frame {
+  position: relative;
   display: block;
   z-index: 1;
   pointer-events: none;
-  stroke:rgb(0,0,0);
+  stroke: rgb(0, 0, 0);
   cursor: default;
 }
 
 @keyframes dash {
   to {
-  stroke-dashoffset: 0;
+    stroke-dashoffset: 0;
   }
-  } 
+}
 
-#Line1, #Line2, #Line3, #Line4{
+#Line1,
+#Line2,
+#Line3,
+#Line4 {
   position: absolute;
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
@@ -48,40 +48,35 @@ code {
   animation-timing-function: ease-in-out;
   animation-duration: 0.375s;
   pointer-events: none;
-
 }
 
-
-#Line2{
+#Line2 {
   animation-delay: 0.15s;
 }
 
-#Line3{
+#Line3 {
   animation-delay: 0.3s;
 }
 
-#Line4{
+#Line4 {
   animation-delay: 0.45s;
 }
 
-
-
-  @keyframes pulse {
-    0% {
-      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
-    }
-  
-    70% {
-      box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
-    }
-  
-    100% {
-      box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-    }
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
   }
 
+  70% {
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
 
-#startButton{
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+#startButton {
   position: relative;
   color: white;
   text-align: center;
@@ -89,48 +84,45 @@ code {
   pointer-events: auto;
   animation: pulse 2s infinite;
 
-
-
   -webkit-touch-callout: none;
   -webkit-user-select: none;
-   -khtml-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none; 
-          user-select: none; 
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-
-#backToStartButton{
+#backToStartButton {
   position: relative;
   color: black;
   text-align: center;
   cursor: pointer;
   pointer-events: auto;
-  stroke-width: 2px;;
+  stroke-width: 2px;
   animation: pulse 2s infinite;
-  background-color : white;
+  background-color: white;
 
   -webkit-touch-callout: none;
   -webkit-user-select: none;
-   -khtml-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none; 
-          user-select: none; 
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-#backToStartButton:hover{
-color:white;
-background-color : black;
-height: 5px;
+#backToStartButton:hover {
+  color: white;
+  background-color: black;
+  height: 5px;
 }
 
-  @keyframes rotation{
-    to{
-    transform: rotate(135deg)
-    }
-    }
+@keyframes rotation {
+  to {
+    transform: rotate(135deg);
+  }
+}
 
-  .rotation{
+.rotation {
   transform: rotate(45deg);
   position: fixed;
   pointer-events: none;
@@ -139,59 +131,73 @@ height: 5px;
   animation-delay: 0.6s;
   animation-iteration-count: 0;
   animation-timing-function: linear;
-  }
+}
 
-.Menu{
+.Menu {
   display: block;
   pointer-events: none;
-  stroke:rgb(0,0,0);
+  stroke: rgb(0, 0, 0);
   cursor: default;
 }
 
-
-#menuOption1,#menuOption2,#menuOption3,#menuOption4{
-    color: black;
-    text-align: center;
-    cursor: pointer;
-    pointer-events: auto;
-    border: none;
-    font-weight: bold;
-
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-     -khtml-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none; 
-            user-select: none; 
-    }
-
-#menuOption1:hover,#menuOption2:hover,#menuOption3:hover,#menuOption4:hover{
-      border: calc(1vh/2);
-      border-style: solid;
-    }
-
-#projectsBackground{
+#menuOption1,
+#menuOption2,
+#menuOption3,
+#menuOption4 {
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  pointer-events: auto;
   border: none;
-}
-.images{
-  
+  font-weight: bold;
+
   -webkit-touch-callout: none;
   -webkit-user-select: none;
-   -khtml-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none; 
-          user-select: none; 
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-.navButton{
+#menuOption1:hover,
+#menuOption2:hover,
+#menuOption3:hover,
+#menuOption4:hover {
+  border: calc(1vh / 2);
+  border-style: solid;
+}
+
+#projectsBackground {
+  border: none;
+}
+.images {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.navButton {
   border-radius: 100%;
   pointer-events: auto;
   border: solid;
 }
-.navButton:hover{
-  border-style:groove;
+
+#menuOption4 {
+  z-index: 100;
 }
 
-#menuOption4{
-  z-index: 100;
+.navArrows {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.navArrows:hover {
+  color: white;
 }

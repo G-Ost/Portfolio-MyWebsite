@@ -1,7 +1,7 @@
-import './App.css';
-import React from "react"
-import Frame from "./Containers/Frame"
-import Menu from "./Containers/Menu"
+import "./App.css";
+import React from "react";
+import Frame from "./Containers/Frame";
+import Menu from "./Containers/Menu";
 import { stylesContext } from "./Contexts/StylesContext";
 function App() {
   const { isMenuVisible, setIsMenuVisible } = React.useContext(stylesContext);
@@ -9,8 +9,18 @@ function App() {
 
   return (
     <div className="App">
-      <Frame backToStartFunctionRef={backToStartFunctionRef} isMenuVisible={isMenuVisible} setIsMenuVisible={setIsMenuVisible} />
-      {isMenuVisible && <Menu backToStartFunctionRef={backToStartFunctionRef} isMenuVisible={isMenuVisible} setIsMenuVisible={setIsMenuVisible} />}
+      <Frame
+        backToStartFunctionRef={backToStartFunctionRef}
+        isMenuVisible={isMenuVisible}
+        setIsMenuVisible={setIsMenuVisible}
+      />
+      {isMenuVisible && (
+        <Menu
+          backToStartFunctionRef={backToStartFunctionRef}
+          isMenuVisible={isMenuVisible}
+          setIsMenuVisible={setIsMenuVisible}
+        />
+      )}
     </div>
   );
 }
