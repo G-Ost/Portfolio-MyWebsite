@@ -5,8 +5,11 @@ import todoImage from "../../Images/todo.jpg";
 import reflexappImage from "../../Images/reflexapp.jpg";
 import gameOfLifeImage from "../../Images/gameOfLife.jpg";
 import bouncySimulatorImage from "../../Images/bouncySim.jpg";
+import arrowImage from "../../Images/arrow.png";
+import arrowHoverImage from "../../Images/arrowHover.png";
 import Project from "../Project";
 import MenuOption from "../../Containers/MenuOption";
+
 
 function Projects(props) {
   const { sizeUnit } = React.useContext(stylesContext);
@@ -35,8 +38,9 @@ function Projects(props) {
 
   const navArrowStyle = {
     position: "absolute",
-    fontSize: sizeUnit / 4,
-    bottom: 0,
+    // fontSize: sizeUnit / 40,
+    height: sizeUnit/5,
+    bottom: sizeUnit/17,
     pointerEvents: "auto",
     cursor: "pointer",
   };
@@ -215,25 +219,31 @@ function Projects(props) {
         ></button>
       </div>
 
-      <span
-        className="navArrows"
-        style={{ ...navArrowStyle, left: sizeUnit / 3 }}
-        onClick={() => {
-          leftArrowNavigation();
-        }}
-      >
-        {"\u2b9c"}
-      </span>
+            <img
+          style={{ ...navArrowStyle, left: sizeUnit / 3, transform: "rotate(180deg)" }}
+          className="navArrows"
+          alt="leftArrow"
+          onMouseOver={(e) => (e.currentTarget.src = arrowHoverImage)}
+          onMouseOut={(e) => (e.currentTarget.src = arrowImage)}
+          src={arrowImage}
+          onClick={() => {
+            leftArrowNavigation();
+          }}
+        ></img>
 
-      <span
-        className="navArrows"
-        style={{ ...navArrowStyle, right: sizeUnit / 3 }}
-        onClick={() => {
-          rightArrowNavigation();
-        }}
-      >
-        {"\u2b9e"}
-      </span>
+
+      <img
+          style={{ ...navArrowStyle, right: sizeUnit / 3 }}
+          className="navArrows"
+          alt="rightArrow"
+          onMouseOver={(e) => (e.currentTarget.src = arrowHoverImage)}
+          onMouseOut={(e) => (e.currentTarget.src = arrowImage)}
+          src={arrowImage}
+          onClick={() => {
+            rightArrowNavigation();
+          }}
+        ></img>
+
     </MenuOption>
   );
 }
