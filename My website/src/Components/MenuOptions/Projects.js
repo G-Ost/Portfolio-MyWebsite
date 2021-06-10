@@ -4,7 +4,7 @@ import websiteImage from "../../Images/website.jpg";
 import todoImage from "../../Images/todo.jpg";
 import reflexappImage from "../../Images/reflexapp.jpg";
 import gameOfLifeImage from "../../Images/gameOfLife.jpg";
-import bouncySimulatorImage from "../../Images/bouncySim.jpg";
+// import bouncySimulatorImage from "../../Images/bouncySim.jpg";
 import arrowImage from "../../Images/arrow.png";
 import arrowHoverImage from "../../Images/arrowHover.png";
 import Project from "../Project";
@@ -22,8 +22,7 @@ function Projects(props) {
   }
 
   function rightArrowNavigation() {
-    console.log(navSelected);
-    if (navSelected !== "6") {
+    if (navSelected !== "5") {
       setNavSelected((parseInt(navSelected) + 1).toString());
     }
   }
@@ -38,7 +37,6 @@ function Projects(props) {
 
   const navArrowStyle = {
     position: "absolute",
-    // fontSize: sizeUnit / 40,
     height: sizeUnit/5,
     bottom: sizeUnit/17,
     pointerEvents: "auto",
@@ -75,7 +73,7 @@ function Projects(props) {
     "External server validation",
   ];
   const featureList4 = ["useState", "useReducer", "useRef"];
-  const featureList5 = ["useContext", "useRef", "CSS animations"];
+  // const featureList5 = ["useContext", "useRef", "CSS animations"];
 
   return (
     <MenuOption color={"#1fbfb8"}>
@@ -137,7 +135,7 @@ function Projects(props) {
           featureList={featureList4}
         />
       )}
-      {navSelected === "6" && (
+      {/* {navSelected === "6" && (
         <Project
           projectTitle={"Bouncy simulator"}
           imageAlt={"todo_image"}
@@ -146,7 +144,7 @@ function Projects(props) {
           firebaseLink={"https://bouncy-simulator.web.app/"}
           featureList={featureList5}
         />
-      )}
+      )} */}
 
       <div
         style={{
@@ -207,7 +205,7 @@ function Projects(props) {
             setNavSelected("5");
           }}
         ></button>
-        <button
+        {/* <button
           className="navButtons"
           style={{
             ...navButtonStyle,
@@ -216,7 +214,7 @@ function Projects(props) {
           onClick={() => {
             setNavSelected("6");
           }}
-        ></button>
+        ></button> */}
       </div>
 
             <img

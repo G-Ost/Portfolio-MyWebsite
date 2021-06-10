@@ -42,8 +42,7 @@ function About(props) {
         >
           <br />
           My name is Grzegorz Ostapczuk and I'm the creator of this site. I have
-          a master's degree in physics. I also enjoy cycling, canoeing and
-          psychology.
+          a master's degree in physics. In my spare time, I like to ride a bike. I'm also interested in lucid dreaming and a little bit of psychology.
           <br />
           <br />
           About a year ago I discovered a new passion - programming. Since then,
